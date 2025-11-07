@@ -24,8 +24,14 @@ $(document).ready(function() {
                 console.log('Respons API:', response); // Debug: Lihat respons API di konsol
     
                 // Parse `body` dari string JSON ke array objek
-                const data = JSON.parse(response.body);
-    
+                let data;
+                try {
+                    data = typeof response === 'string' ? JSON.parse(response) : response;
+                } catch(e) {
+                    console.error('Failed to parse JSON:', e);
+                    data = [];
+                }
+
                 $('#guestList').empty();
     
                 if (data.length === 0) {
@@ -117,3 +123,4 @@ $(document).ready(function() {
     // Load daftar tamu saat halaman dimuat
     loadGuests();
 });
+
