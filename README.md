@@ -1,3 +1,7 @@
+Makesure you create this app in Region us-west-2 (Oregon)
+
+---
+
 # Workflow for Building a Static Guestbook Website
 
 This project is a digital guestbook used for a wedding reception. The application consists of:
