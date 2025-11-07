@@ -16,16 +16,15 @@ This project is a digital guestbook used for a wedding reception. The applicatio
 
 ## 1. Host the Static Website (EC2)
 Steps:
-1. Launch an EC2 instance (t3.medium) with amazon-linux-23 as the os.
-2. Configure the instance Security Group to allow HTTP (port 80) and SSH (port 22).
+1. Launch an EC2 instance (t3.medium) with amazon-linux-2023 as the os.
+2. Configure the instance Security Group to allow HTTP (port 80).
 3. SSH into the instance and install a web server (e.g., nginx or Apache).
-   - Example for nginx on Ubuntu:
-     sudo apt update && sudo apt install -y httpd
-4. Upload `index.html`, `script.js`, and `style.css` to the web server document root (e.g., `/var/www/html` or `/usr/share/nginx/html`).
+   - Example for apache on amazon-linux-2023:
+     sudo yum update && sudo yum install -y httpd
+4. You need to fork this project and change the script with your api, and git clone in the instance.
 5. Start and enable the web server:
-   sudo systemctl enable --now nginx
+   sudo systemctl enable --now httpd
 6. Ensure CORS is configured in your API (or set appropriate response headers) so the frontend can access the API.
-7. (Optional) Allocate an Elastic IP and associate it with the instance for a stable public IP, or point a domain via Route53.
 
 ---
 
