@@ -4,7 +4,7 @@ import boto3
 def lambda_handler(event, context):
     # Membuat klien DynamoDB
     dynamodb = boto3.resource('dynamodb')
-    table = dynamodb.Table('BukuTamuTable')
+    table = dynamodb.Table('GuestBooks')
     
     try:
         # Parse data dari body request
