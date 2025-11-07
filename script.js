@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    const apiUrl = 'https://APIurl'; // Ganti dengan URL API Gateway Anda
+    const apiUrl = 'https://dkqkulwnt8.execute-api.us-east-1.amazonaws.com/v1'; // Ganti dengan URL API Gateway Anda
     let selectedGuestId = null; // Menyimpan ID tamu yang dipilih untuk diupdate
 
     // Fungsi untuk menampilkan notifikasi
